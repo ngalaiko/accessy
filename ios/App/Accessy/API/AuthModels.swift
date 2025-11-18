@@ -84,6 +84,16 @@ struct Credentials: Codable {
     var loginKeyIdentifier: String { "login-\(deviceId)" }
     var signingKeyIdentifier: String { "signing-\(deviceId)" }
 
+    /// Check if the access token is expired
+    var isExpired: Bool {
+        JWT.isExpired(authToken)
+    }
+
+    /// Check if the access token is still valid (not expired)
+    var isValid: Bool {
+        JWT.isValid(authToken)
+    }
+
     init(authToken: String, deviceId: String, userId: String, certBase64: String, isDemoMode: Bool = false) {
         self.authToken = authToken
         self.deviceId = deviceId

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F1CAB4B2EBA401F004F4264 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1CAB492EBA401F004F4264 /* DemoData.swift */; };
 		3F1CAB4E2EBA403C004F4264 /* DemoModeBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1CAB4C2EBA403C004F4264 /* DemoModeBanner.swift */; };
+		3F945FCD2ECC7F0800223D5A /* TokenRefreshService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F945FCC2ECC7F0800223D5A /* TokenRefreshService.swift */; };
 		3FAFCC552EB5FC750068D59A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FAFCC2B2EB5F7060068D59A /* Assets.xcassets */; };
 		3FAFCCFA2EB653110068D59A /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFCCD02EB652EF0068D59A /* AuthViewModel.swift */; };
 		3FAFCCFB2EB653110068D59A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFCCD12EB652EF0068D59A /* LoginView.swift */; };
@@ -59,6 +60,7 @@
 		3F1CAB492EBA401F004F4264 /* DemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		3F1CAB4C2EBA403C004F4264 /* DemoModeBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoModeBanner.swift; sourceTree = "<group>"; };
 		3F929AAB2EB8C8E40030C680 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F945FCC2ECC7F0800223D5A /* TokenRefreshService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRefreshService.swift; sourceTree = "<group>"; };
 		3FAFCC2B2EB5F7060068D59A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FAFCC422EB5F7060068D59A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FAFCCD02EB652EF0068D59A /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		3FAFCD6D2EB6A4370068D59A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3F945FCC2ECC7F0800223D5A /* TokenRefreshService.swift */,
 				3FEDACA32EBE31BE007D5291 /* CredentialsService.swift */,
 				3FEDACA42EBE31BE007D5291 /* KeychainService.swift */,
 				3F1CAB4A2EBA401F004F4264 /* Demo */,
@@ -266,7 +269,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2600;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					3FAFCC1A2EB5F6BA0068D59A = {
 						CreatedOnToolsVersion = 26.0.1;
@@ -330,6 +333,7 @@
 				3FAFCCFF2EB653110068D59A /* DoorsListView.swift in Sources */,
 				3FAFCD012EB653110068D59A /* NearestDoorView.swift in Sources */,
 				3FEDACA12EBE310B007D5291 /* LocationManager.swift in Sources */,
+				3F945FCD2ECC7F0800223D5A /* TokenRefreshService.swift in Sources */,
 				3FEDACA22EBE310B007D5291 /* NearestDoorManager.swift in Sources */,
 				3F1CAB4B2EBA401F004F4264 /* DemoData.swift in Sources */,
 				3FAFCD032EB653110068D59A /* ContentView.swift in Sources */,
@@ -405,6 +409,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -462,6 +467,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};

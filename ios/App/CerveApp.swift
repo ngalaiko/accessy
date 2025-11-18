@@ -22,9 +22,20 @@ struct CerveApp: App {
         let credentialsStore = CredentialsService(keyStore: keyStore)
         let apiClient = APIClient()
 
+        // Initialize token refresh service
+        let tokenRefreshService = TokenRefreshService(
+            apiClient: apiClient,
+            keyStore: keyStore,
+            credentialsService: credentialsStore
+        )
+
         // Initialize services
         let authService = AuthService(apiClient: apiClient, keyStore: keyStore)
-        let doorsService = DoorsService(apiClient: apiClient, keyStore: keyStore)
+        let doorsService = DoorsService(
+            apiClient: apiClient,
+            keyStore: keyStore,
+            tokenRefreshService: tokenRefreshService
+        )
 
         // Initialize managers and view models
         let locationManager = LocationManager()

@@ -25,10 +25,21 @@ private struct AuthServiceKey: EnvironmentKey {
 }
 
 private struct DoorsServiceKey: EnvironmentKey {
-    static let defaultValue = DoorsService(
-        apiClient: APIClient(),
-        keyStore: KeychainService()
-    )
+    static let defaultValue: DoorsService = {
+        let keyStore = KeychainService()
+        let credentialsService = CredentialsService(keyStore: keyStore)
+        let apiClient = APIClient()
+        let tokenRefreshService = TokenRefreshService(
+            apiClient: apiClient,
+            keyStore: keyStore,
+            credentialsService: credentialsService
+        )
+        return DoorsService(
+            apiClient: apiClient,
+            keyStore: keyStore,
+            tokenRefreshService: tokenRefreshService
+        )
+    }()
 }
 
 // MARK: - EnvironmentValues Extensions

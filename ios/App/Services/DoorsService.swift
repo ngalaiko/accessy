@@ -22,10 +22,12 @@ private let doorLocationOverrides: [String: CLLocationCoordinate2D] = [
 final class DoorsService {
     private let apiClient: APIClient
     private let keyStore: KeychainService
+    private let tokenRefreshService: TokenRefreshService
 
-    init(apiClient: APIClient, keyStore: KeychainService) {
+    init(apiClient: APIClient, keyStore: KeychainService, tokenRefreshService: TokenRefreshService) {
         self.apiClient = apiClient
         self.keyStore = keyStore
+        self.tokenRefreshService = tokenRefreshService
     }
 
     // MARK: - Door Operations
@@ -37,8 +39,18 @@ final class DoorsService {
             return DemoData.sampleDoors
         }
 
-        let response = try await apiClient.getDoors(authToken: credentials.authToken)
-        return response.mostInvokedPublicationsList.map { fixDoor($0) }
+        // Get valid token (auto-refreshes if expired)
+        let token = try await tokenRefreshService.getValidToken()
+
+        do {
+            let response = try await apiClient.getDoors(authToken: token)
+            return response.mostInvokedPublicationsList.map { fixDoor($0) }
+        } catch APIError.unauthorized {
+            // Token might have expired during request - force refresh and retry once
+            let newToken = try await tokenRefreshService.forceRefresh()
+            let response = try await apiClient.getDoors(authToken: newToken)
+            return response.mostInvokedPublicationsList.map { fixDoor($0) }
+        }
     }
 
     /// Apply location overrides to a door if available
@@ -89,8 +101,17 @@ final class DoorsService {
         // Create authentication proof
         let proof = try Signing.createProof(certBase64: credentials.certBase64, privateKey: privateKey)
 
-        // Execute unlock operation
-        try await apiClient.unlockDoor(operationId: operation.id, proof: proof, authToken: credentials.authToken)
+        // Get valid token (auto-refreshes if expired)
+        let token = try await tokenRefreshService.getValidToken()
+
+        do {
+            // Execute unlock operation
+            try await apiClient.unlockDoor(operationId: operation.id, proof: proof, authToken: token)
+        } catch APIError.unauthorized {
+            // Token might have expired during request - force refresh and retry once
+            let newToken = try await tokenRefreshService.forceRefresh()
+            try await apiClient.unlockDoor(operationId: operation.id, proof: proof, authToken: newToken)
+        }
     }
 
     /// Unlock a door
@@ -112,8 +133,17 @@ final class DoorsService {
         // Create authentication proof
         let proof = try Signing.createProof(certBase64: credentials.certBase64, privateKey: privateKey)
 
-        // Execute unlock operation
-        try await apiClient.unlockDoor(operationId: operation.id, proof: proof, authToken: credentials.authToken)
+        // Get valid token (auto-refreshes if expired)
+        let token = try await tokenRefreshService.getValidToken()
+
+        do {
+            // Execute unlock operation
+            try await apiClient.unlockDoor(operationId: operation.id, proof: proof, authToken: token)
+        } catch APIError.unauthorized {
+            // Token might have expired during request - force refresh and retry once
+            let newToken = try await tokenRefreshService.forceRefresh()
+            try await apiClient.unlockDoor(operationId: operation.id, proof: proof, authToken: newToken)
+        }
     }
 
     /// Find nearest door based on current location
@@ -150,7 +180,16 @@ final class DoorsService {
             return
         }
 
-        try await apiClient.setFavorite(publicationId: doorId, isFavorite: isFavorite, authToken: credentials.authToken)
+        // Get valid token (auto-refreshes if expired)
+        let token = try await tokenRefreshService.getValidToken()
+
+        do {
+            try await apiClient.setFavorite(publicationId: doorId, isFavorite: isFavorite, authToken: token)
+        } catch APIError.unauthorized {
+            // Token might have expired during request - force refresh and retry once
+            let newToken = try await tokenRefreshService.forceRefresh()
+            try await apiClient.setFavorite(publicationId: doorId, isFavorite: isFavorite, authToken: newToken)
+        }
     }
 }
 
