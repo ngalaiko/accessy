@@ -3,7 +3,7 @@ import Foundation
 import Security
 
 /// ECDH key agreement and shared secret derivation
-class ECDH {
+nonisolated class ECDH {
     // MARK: - Constants
 
     /// DER structure constants for SPKI (SubjectPublicKeyInfo) format

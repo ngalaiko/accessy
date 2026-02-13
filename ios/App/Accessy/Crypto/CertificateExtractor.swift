@@ -2,7 +2,7 @@ import Foundation
 import Security
 
 /// Utility for extracting and decrypting certificates from enrollment responses
-class CertificateExtractor {
+nonisolated class CertificateExtractor {
     /// Extract and decrypt certificate from encrypted enrollment response
     ///
     /// The certificate format is: {header}.{metadata}.{serverPubKey}.{encryptedData}.{signature}

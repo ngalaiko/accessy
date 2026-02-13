@@ -1,7 +1,7 @@
 import Foundation
 
 /// JWT decoding utilities
-class JWT {
+nonisolated class JWT {
     /// Decode JWT payload without verification (server already verified)
     static func decodePayload(_ token: String) throws -> JWTPayload {
         let parts = token.split(separator: ".")

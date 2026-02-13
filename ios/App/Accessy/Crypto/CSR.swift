@@ -2,7 +2,7 @@ import Foundation
 import Security
 
 /// Certificate Signing Request generation
-class CSR {
+nonisolated class CSR {
     /// Create a Certificate Signing Request in Accessy format
     /// Returns: {base64("axs.1.0")}.{base64(base64(csr_der))}
     static func create(

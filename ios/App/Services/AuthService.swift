@@ -2,7 +2,7 @@ import Foundation
 import Security
 
 /// Service for authentication operations
-final class AuthService {
+nonisolated final class AuthService {
     private let apiClient: APIClient
     private let keyStore: KeychainService
 
@@ -138,13 +138,13 @@ final class AuthService {
 
 // MARK: - Supporting Types
 
-struct EnrollmentToken {
+nonisolated struct EnrollmentToken {
     let token: String
     let recoveryKeyRequired: Bool
     let userId: String
     let deviceId: String
 }
 
-enum AuthServiceError: Error {
+nonisolated enum AuthServiceError: Error {
     case certificateExtractionFailed
 }

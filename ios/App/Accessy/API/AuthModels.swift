@@ -2,39 +2,39 @@ import Foundation
 
 // MARK: - Verification
 
-struct VerifyRequest: Codable {
+nonisolated struct VerifyRequest: Codable {
     let msisdn: String
 }
 
-struct VerifyResponse: Codable {
+nonisolated struct VerifyResponse: Codable {
     let verificationCodeId: String
 }
 
 // MARK: - Enrollment Token
 
-struct EnrollTokenRequest: Codable {
+nonisolated struct EnrollTokenRequest: Codable {
     let code: String
     let id: String
 }
 
-struct EnrollTokenResponse: Codable {
+nonisolated struct EnrollTokenResponse: Codable {
     let token: String
     let recoveryKeyRequired: Bool
 }
 
 // MARK: - Recovery Key
 
-struct ValidateRecoveryRequest: Codable {
+nonisolated struct ValidateRecoveryRequest: Codable {
     let recoveryKey: String
 }
 
-struct ValidateRecoveryResponse: Codable {
+nonisolated struct ValidateRecoveryResponse: Codable {
     let valid: Bool
 }
 
 // MARK: - Device Enrollment
 
-struct EnrollRequest: Codable {
+nonisolated struct EnrollRequest: Codable {
     let deviceName: String
     let recoveryKey: String?
     let csrForSigning: String
@@ -42,14 +42,14 @@ struct EnrollRequest: Codable {
     let appName: String
 }
 
-struct EnrollResponse: Codable {
+nonisolated struct EnrollResponse: Codable {
     let certificateForLogin: String
     let certificateForSigning: String
 }
 
 // MARK: - Login
 
-struct LoginResponse: Codable {
+nonisolated struct LoginResponse: Codable {
     let authToken: String
 
     enum CodingKeys: String, CodingKey {
@@ -59,7 +59,7 @@ struct LoginResponse: Codable {
 
 // MARK: - JWT Payload
 
-struct JWTPayload: Codable {
+nonisolated struct JWTPayload: Codable {
     let jti: String?
     let sub: String?
     let iss: String?
@@ -73,7 +73,7 @@ struct JWTPayload: Codable {
 
 /// Credentials stored securely in Keychain
 /// Note: Private keys are stored separately using KeychainKeyStore
-struct Credentials: Codable {
+nonisolated struct Credentials: Codable {
     let authToken: String
     let deviceId: String
     let userId: String

@@ -1,7 +1,7 @@
 import Foundation
 import Security
 
-enum CryptoError: Error {
+nonisolated enum CryptoError: Error {
     case keyGenerationFailed
     case keyExportFailed
     case keyImportFailed
@@ -9,7 +9,7 @@ enum CryptoError: Error {
 }
 
 /// EC P-256 (secp256r1) key management
-class CryptoKeys {
+nonisolated class CryptoKeys {
     /// Generate ECDSA P-256 key pair
     static func generateKeyPair() throws -> (privateKey: SecKey, publicKey: SecKey) {
         let attributes: [String: Any] = [

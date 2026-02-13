@@ -2,7 +2,7 @@ import Foundation
 
 /// Service for managing access token refresh
 /// Mirrors Android app behavior: re-authenticate with crypto proof when token expires
-final class TokenRefreshService {
+nonisolated final class TokenRefreshService {
     private let apiClient: APIClient
     private let keyStore: KeychainService
     private let credentialsService: CredentialsService

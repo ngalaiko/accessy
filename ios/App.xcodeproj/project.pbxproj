@@ -41,7 +41,48 @@
 		3FEDACA22EBE310B007D5291 /* NearestDoorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDAC9F2EBE310B007D5291 /* NearestDoorManager.swift */; };
 		3FEDACA52EBE31BE007D5291 /* CredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDACA32EBE31BE007D5291 /* CredentialsService.swift */; };
 		3FEDACA62EBE31BE007D5291 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDACA42EBE31BE007D5291 /* KeychainService.swift */; };
+		/* New app target build files */
+		AA000001AAAA000100000001 /* SharedDoorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001AAAA000000000001 /* SharedDoorStore.swift */; };
+		AA000002AAAA000100000001 /* OpenNearestDoorIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002AAAA000000000001 /* OpenNearestDoorIntent.swift */; };
+		AA000003AAAA000100000001 /* CerveShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000003AAAA000000000001 /* CerveShortcuts.swift */; };
+		AA000004AAAA000100000001 /* UnlockDoorIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000004AAAA000000000001 /* UnlockDoorIntent.swift */; };
+		AA000005AAAA000100000001 /* DoorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000005AAAA000000000001 /* DoorEntity.swift */; };
+		/* Widget target build files */
+		BB000001BBBB000100000001 /* CerveWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001BBBB000000000001 /* CerveWidgetBundle.swift */; };
+		BB000006BBBB000100000001 /* DoorLockScreenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000006BBBB000000000001 /* DoorLockScreenWidget.swift */; };
+		BB100013BBBB000100000001 /* DoorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000005AAAA000000000001 /* DoorEntity.swift */; };
+		/* Shared files compiled in widget target */
+		BB100001BBBB000100000001 /* DoorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFCD5E2EB6A4370068D59A /* DoorModels.swift */; };
+		BB100002BBBB000100000001 /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFCD5D2EB6A4370068D59A /* AuthModels.swift */; };
+		BB100003BBBB000100000001 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFCD5C2EB6A4370068D59A /* APIClient.swift */; };
+		BB100004BBBB000100000001 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFCD5F2EB6A4370068D59A /* NetworkMonitor.swift */; };
+		BB100005BBBB000100000001 /* Signing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFCD672EB6A4370068D59A /* Signing.swift */; };
+		BB100006BBBB000100000001 /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFCD662EB6A4370068D59A /* JWT.swift */; };
+		BB100007BBBB000100000001 /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFCD652EB6A4370068D59A /* Encryption.swift */; };
+		BB100008BBBB000100000001 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDACA42EBE31BE007D5291 /* KeychainService.swift */; };
+		BB100009BBBB000100000001 /* CredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDACA32EBE31BE007D5291 /* CredentialsService.swift */; };
+		BB10000ABBBB000100000001 /* TokenRefreshService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F945FCC2ECC7F0800223D5A /* TokenRefreshService.swift */; };
+		BB10000BBBBB000100000001 /* DoorsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFCD6B2EB6A4370068D59A /* DoorsService.swift */; };
+		BB10000CBBBB000100000001 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1CAB492EBA401F004F4264 /* DemoData.swift */; };
+		BB10000DBBBB000100000001 /* SharedDoorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001AAAA000000000001 /* SharedDoorStore.swift */; };
+		BB10000EBBBB000100000001 /* UnlockDoorIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000004AAAA000000000001 /* UnlockDoorIntent.swift */; };
+		BB10000FBBBB000100000001 /* CryptoKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFCD622EB6A4370068D59A /* CryptoKeys.swift */; };
+		BB100010BBBB000100000001 /* ECDH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFCD642EB6A4370068D59A /* ECDH.swift */; };
+		BB100011BBBB000100000001 /* CertificateExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFCD612EB6A4370068D59A /* CertificateExtractor.swift */; };
+		BB100012BBBB000100000001 /* CSR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFCD632EB6A4370068D59A /* CSR.swift */; };
+		/* Widget extension in app */
+		CC000001CCCC000100000001 /* CerveWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CC000001CCCC000000000001 /* CerveWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CC000002CCCC000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FAFCC132EB5F6BA0068D59A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC000003CCCC000000000001;
+			remoteInfo = CerveWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		3FAFCCBC2EB64F220068D59A /* Embed Foundation Extensions */ = {
@@ -50,6 +91,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				CC000001CCCC000100000001 /* CerveWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,10 +136,28 @@
 		3FEDAC9F2EBE310B007D5291 /* NearestDoorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestDoorManager.swift; sourceTree = "<group>"; };
 		3FEDACA32EBE31BE007D5291 /* CredentialsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsService.swift; sourceTree = "<group>"; };
 		3FEDACA42EBE31BE007D5291 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		/* New file references */
+		AA000001AAAA000000000001 /* SharedDoorStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDoorStore.swift; sourceTree = "<group>"; };
+		AA000002AAAA000000000001 /* OpenNearestDoorIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenNearestDoorIntent.swift; sourceTree = "<group>"; };
+		AA000003AAAA000000000001 /* CerveShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CerveShortcuts.swift; sourceTree = "<group>"; };
+		AA000004AAAA000000000001 /* UnlockDoorIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockDoorIntent.swift; sourceTree = "<group>"; };
+		AA000005AAAA000000000001 /* DoorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorEntity.swift; sourceTree = "<group>"; };
+		BB000001BBBB000000000001 /* CerveWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CerveWidgetBundle.swift; sourceTree = "<group>"; };
+		BB000006BBBB000000000001 /* DoorLockScreenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorLockScreenWidget.swift; sourceTree = "<group>"; };
+		CC000001CCCC000000000001 /* CerveWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CerveWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC000002CCCC000000000002 /* CerveWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CerveWidget.entitlements; sourceTree = "<group>"; };
+		CC000003CCCC000000000002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3FAFCC182EB5F6BA0068D59A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC000004CCCC000000000001 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -127,7 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				3FAFCCDF2EB652EF0068D59A /* App */,
+				DD000001DDDD000000000001 /* CerveWidget */,
 				3F929AAB2EB8C8E40030C680 /* App.app */,
+				CC000001CCCC000000000001 /* CerveWidgetExtension.appex */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,6 +234,7 @@
 				3FAFCD692EB6A4370068D59A /* Accessy */,
 				3FAFCD6D2EB6A4370068D59A /* Services */,
 				3FAFCCD72EB652EF0068D59A /* Views */,
+				EE000001EEEE000000000001 /* Intents */,
 				3FAFCCDD2EB652EF0068D59A /* CerveApp.swift */,
 				3FAFCCDE2EB652EF0068D59A /* ContentView.swift */,
 				3FAFCC2B2EB5F7060068D59A /* Assets.xcassets */,
@@ -225,6 +288,7 @@
 				3FAFCDBA2EB75DD70068D59A /* EnvironmentKeys.swift */,
 				3FAFCD6A2EB6A4370068D59A /* AuthService.swift */,
 				3FAFCD6B2EB6A4370068D59A /* DoorsService.swift */,
+				AA000001AAAA000000000001 /* SharedDoorStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -236,6 +300,28 @@
 				3FEDAC9F2EBE310B007D5291 /* NearestDoorManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		EE000001EEEE000000000001 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				AA000002AAAA000000000001 /* OpenNearestDoorIntent.swift */,
+				AA000003AAAA000000000001 /* CerveShortcuts.swift */,
+				AA000004AAAA000000000001 /* UnlockDoorIntent.swift */,
+				AA000005AAAA000000000001 /* DoorEntity.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		DD000001DDDD000000000001 /* CerveWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CC000003CCCC000000000002 /* Info.plist */,
+				CC000002CCCC000000000002 /* CerveWidget.entitlements */,
+				BB000001BBBB000000000001 /* CerveWidgetBundle.swift */,
+				BB000006BBBB000000000001 /* DoorLockScreenWidget.swift */,
+			);
+			path = CerveWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +339,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CC000003CCCC000100000001 /* PBXTargetDependency */,
 			);
 			name = App;
 			packageProductDependencies = (
@@ -260,6 +347,25 @@
 			productName = CerveApp;
 			productReference = 3F929AAB2EB8C8E40030C680 /* App.app */;
 			productType = "com.apple.product-type.application";
+		};
+		CC000003CCCC000000000001 /* CerveWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC000005CCCC000000000001 /* Build configuration list for PBXNativeTarget "CerveWidgetExtension" */;
+			buildPhases = (
+				CC000006CCCC000000000001 /* Sources */,
+				CC000004CCCC000000000001 /* Frameworks */,
+				CC000007CCCC000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CerveWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = CerveWidgetExtension;
+			productReference = CC000001CCCC000000000001 /* CerveWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -272,6 +378,9 @@
 				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					3FAFCC1A2EB5F6BA0068D59A = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					CC000003CCCC000000000001 = {
 						CreatedOnToolsVersion = 26.0.1;
 					};
 				};
@@ -291,6 +400,7 @@
 			projectRoot = "";
 			targets = (
 				3FAFCC1A2EB5F6BA0068D59A /* App */,
+				CC000003CCCC000000000001 /* CerveWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -302,6 +412,13 @@
 			files = (
 				3FAFCC552EB5FC750068D59A /* Assets.xcassets in Resources */,
 				3FAFCD2C2EB6647C0068D59A /* AppIcon.icon in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC000007CCCC000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,10 +461,51 @@
 				3FEDACA62EBE31BE007D5291 /* KeychainService.swift in Sources */,
 				3FAFCD842EB6A4370068D59A /* RecoveryStepView.swift in Sources */,
 				3FAFCD852EB6A4370068D59A /* DoorRow.swift in Sources */,
+				AA000001AAAA000100000001 /* SharedDoorStore.swift in Sources */,
+				AA000002AAAA000100000001 /* OpenNearestDoorIntent.swift in Sources */,
+				AA000003AAAA000100000001 /* CerveShortcuts.swift in Sources */,
+				AA000004AAAA000100000001 /* UnlockDoorIntent.swift in Sources */,
+				AA000005AAAA000100000001 /* DoorEntity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC000006CCCC000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB000001BBBB000100000001 /* CerveWidgetBundle.swift in Sources */,
+				BB000006BBBB000100000001 /* DoorLockScreenWidget.swift in Sources */,
+				BB100013BBBB000100000001 /* DoorEntity.swift in Sources */,
+				BB100001BBBB000100000001 /* DoorModels.swift in Sources */,
+				BB100002BBBB000100000001 /* AuthModels.swift in Sources */,
+				BB100003BBBB000100000001 /* APIClient.swift in Sources */,
+				BB100004BBBB000100000001 /* NetworkMonitor.swift in Sources */,
+				BB100005BBBB000100000001 /* Signing.swift in Sources */,
+				BB100006BBBB000100000001 /* JWT.swift in Sources */,
+				BB100007BBBB000100000001 /* Encryption.swift in Sources */,
+				BB100008BBBB000100000001 /* KeychainService.swift in Sources */,
+				BB100009BBBB000100000001 /* CredentialsService.swift in Sources */,
+				BB10000ABBBB000100000001 /* TokenRefreshService.swift in Sources */,
+				BB10000BBBBB000100000001 /* DoorsService.swift in Sources */,
+				BB10000CBBBB000100000001 /* DemoData.swift in Sources */,
+				BB10000DBBBB000100000001 /* SharedDoorStore.swift in Sources */,
+				BB10000EBBBB000100000001 /* UnlockDoorIntent.swift in Sources */,
+				BB10000FBBBB000100000001 /* CryptoKeys.swift in Sources */,
+				BB100010BBBB000100000001 /* ECDH.swift in Sources */,
+				BB100011BBBB000100000001 /* CertificateExtractor.swift in Sources */,
+				BB100012BBBB000100000001 /* CSR.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CC000003CCCC000100000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC000003CCCC000000000001 /* CerveWidgetExtension */;
+			targetProxy = CC000002CCCC000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3FAFCC242EB5F6BA0068D59A /* Debug */ = {
@@ -553,6 +711,73 @@
 			};
 			name = Release;
 		};
+		/* Widget Extension build configurations */
+		CC000008CCCC000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CerveWidget/CerveWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5S3AM79MK3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CerveWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cerve Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rocks.galaiko.Cerve.CerveWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CC000009CCCC000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CerveWidget/CerveWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5S3AM79MK3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CerveWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cerve Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rocks.galaiko.Cerve.CerveWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -570,6 +795,15 @@
 			buildConfigurations = (
 				3FAFCC272EB5F6BA0068D59A /* Debug */,
 				3FAFCC282EB5F6BA0068D59A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC000005CCCC000000000001 /* Build configuration list for PBXNativeTarget "CerveWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC000008CCCC000000000001 /* Debug */,
+				CC000009CCCC000000000001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

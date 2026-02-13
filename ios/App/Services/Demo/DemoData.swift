@@ -2,7 +2,7 @@ import CoreLocation
 import Foundation
 
 /// Demo mode data for App Store review
-enum DemoData {
+nonisolated enum DemoData {
     // MARK: - Demo Phone Numbers
 
     static let demoPhoneNumbers = [

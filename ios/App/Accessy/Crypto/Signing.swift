@@ -3,7 +3,7 @@ import Foundation
 import Security
 
 /// ECDSA signing and proof creation
-class Signing {
+nonisolated class Signing {
     /// Create authentication proof in format: {header}.{certificate}.{payload}.{signature}
     static func createProof(certBase64: String, privateKey: SecKey) throws -> String {
         // Step 1: Generate header

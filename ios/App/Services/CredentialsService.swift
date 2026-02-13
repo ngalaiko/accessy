@@ -8,7 +8,7 @@ import Security
 /// - Persists across app reinstalls
 /// - Can be synced via iCloud Keychain (if enabled)
 /// - Separate from app sandbox (survives app deletion)
-final class CredentialsService {
+nonisolated final class CredentialsService {
     private let service = "rocks.galaiko.cerve"
     private let credentialsKey = "credentials"
     private let keychainService: KeychainService

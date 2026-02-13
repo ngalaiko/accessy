@@ -1,6 +1,7 @@
 import Combine
 import Foundation
 import UIKit
+import WidgetKit
 
 /// View model for doors list and unlock operations
 /// Handles business logic for door management
@@ -16,6 +17,7 @@ class DoorsViewModel: ObservableObject {
     // MARK: - Dependencies
 
     private let doorsService: DoorsService
+    private let sharedStore = SharedDoorStore()
 
     // MARK: - Initialization
 
@@ -32,6 +34,8 @@ class DoorsViewModel: ObservableObject {
 
         do {
             doors = try await doorsService.getDoors(credentials: credentials)
+            sharedStore.saveDoors(doors)
+            WidgetCenter.shared.reloadAllTimelines()
         } catch let error as APIError {
             errorMessage = error.errorDescription
         } catch {
@@ -101,6 +105,9 @@ class DoorsViewModel: ObservableObject {
                     favorite: newFavoriteStatus
                 )
             }
+
+            sharedStore.saveDoors(doors)
+            WidgetCenter.shared.reloadAllTimelines()
         } catch let error as APIError {
             errorMessage = error.errorDescription
         } catch {

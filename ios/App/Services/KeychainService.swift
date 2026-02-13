@@ -1,7 +1,7 @@
 import Foundation
 import Security
 
-enum KeychainError: Error {
+nonisolated enum KeychainError: Error {
     case saveFailed(OSStatus)
     case loadFailed(OSStatus)
     case deleteFailed(OSStatus)
@@ -9,7 +9,7 @@ enum KeychainError: Error {
     case decodingFailed
 }
 
-final class KeychainService {
+nonisolated final class KeychainService {
     private let service = "rocks.galaiko.cerve.keys"
     private let accessGroup = "5S3AM79MK3.rocks.galaiko.cerve"
 

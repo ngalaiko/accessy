@@ -3,7 +3,7 @@ import Foundation
 import Security
 
 /// Certificate decryption using AES-256-CBC + HMAC-SHA256
-class Encryption {
+nonisolated class Encryption {
     /// Decrypt certificate using AES-256-CBC + HMAC-SHA256 with ECDH-derived key
     static func decryptCertificate(
         encryptedCert: Data,

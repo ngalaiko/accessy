@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - Door
 
-struct Door: Codable, Identifiable {
+nonisolated struct Door: Codable, Identifiable {
     let publicationId: String
     let name: String
     let asset: Asset
@@ -40,7 +40,7 @@ struct Door: Codable, Identifiable {
 
 // MARK: - API Responses
 
-struct DoorsResponse: Codable {
+nonisolated struct DoorsResponse: Codable {
     let items: [Door]
 
     var mostInvokedPublicationsList: [Door] {

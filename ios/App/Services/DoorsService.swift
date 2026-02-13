@@ -1,15 +1,22 @@
 import CoreLocation
 import Foundation
 
+/// Name overrides for specific doors
+nonisolated private let doorNameOverrides: [String: String] = [
+    "f9114e43-b180-470f-b953-2d90fb67aa72": "Office",
+    "b450d23a-451a-49b8-9d9a-07f7bb3ec36c": "Theater",
+    "f96ebb6d-b9ec-422f-905f-8a3b9575ea30": "Reception",
+]
+
 /// Location overrides for specific doors
-private let doorLocationOverrides: [String: CLLocationCoordinate2D] = [
+nonisolated private let doorLocationOverrides: [String: CLLocationCoordinate2D] = [
     "f9114e43-b180-470f-b953-2d90fb67aa72": CLLocationCoordinate2D(
         latitude: 57.711941,
         longitude: 11.945427
     ), // P.O nr 21
     "b450d23a-451a-49b8-9d9a-07f7bb3ec36c": CLLocationCoordinate2D(
-        latitude: 57.711437,
-        longitude: 11.946004
+        latitude: 57.71145,
+        longitude: 11.94556
     ),
     // United Spaces Theatre Plan 2
     "f96ebb6d-b9ec-422f-905f-8a3b9575ea30": CLLocationCoordinate2D(
@@ -19,7 +26,7 @@ private let doorLocationOverrides: [String: CLLocationCoordinate2D] = [
 ]
 
 /// Service for door operations
-final class DoorsService {
+nonisolated final class DoorsService {
     private let apiClient: APIClient
     private let keyStore: KeychainService
     private let tokenRefreshService: TokenRefreshService
@@ -55,21 +62,24 @@ final class DoorsService {
 
     /// Apply location overrides to a door if available
     private func fixDoor(_ door: Door) -> Door {
-        guard let override = doorLocationOverrides[door.id] else {
+        let nameOverride = doorNameOverrides[door.id]
+        let locationOverride = doorLocationOverrides[door.id]
+
+        guard nameOverride != nil || locationOverride != nil else {
             return door
         }
 
-        let newPosition = Door.Position(latitude: override.latitude, longitude: override.longitude)
+        let newPosition = locationOverride.map { Door.Position(latitude: $0.latitude, longitude: $0.longitude) }
         let newAsset = Door.Asset(
             id: door.asset.id,
             name: door.asset.name,
             operations: door.asset.operations,
-            position2d: newPosition
+            position2d: newPosition ?? door.asset.position2d
         )
 
         return Door(
             publicationId: door.publicationId,
-            name: door.name,
+            name: nameOverride ?? door.name,
             asset: newAsset,
             favorite: door.favorite
         )
@@ -195,7 +205,7 @@ final class DoorsService {
 
 // MARK: - Errors
 
-enum DoorsServiceError: Error, LocalizedError {
+nonisolated enum DoorsServiceError: Error, LocalizedError {
     case doorNotFound
     case noOperationsAvailable
 

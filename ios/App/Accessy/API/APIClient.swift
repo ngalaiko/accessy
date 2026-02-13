@@ -1,6 +1,6 @@
 import Foundation
 
-enum APIError: Error, LocalizedError {
+nonisolated enum APIError: Error, LocalizedError {
     case invalidURL
     case unauthorized
     case forbidden
@@ -39,7 +39,7 @@ enum APIError: Error, LocalizedError {
 }
 
 /// HTTP client for Accessy API
-class APIClient {
+nonisolated class APIClient {
     private let baseURL = "https://api.accessy.se"
 
     private let defaultHeaders: [String: String] = [
@@ -55,7 +55,7 @@ class APIClient {
         self.session = session
     }
 
-    nonisolated private func checkNetworkConnection() async throws {
+    private func checkNetworkConnection() async throws {
         try await MainActor.run {
             try NetworkMonitor.shared.ensureConnected()
         }
